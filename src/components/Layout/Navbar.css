@@ -1,0 +1,38 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 800px;
+    width: 90%;
+    height: 100px;
+    /* background: linear-gradient(to right, #EE8F00, #50D98B 53.13%, #00C0F5 100%); */
+}
+.navbar .container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 2px);
+    width: 100%;
+    background-color: black;
+}
+
+.navbar .container .logo {
+    min-width: 70px;
+    max-width: 80px;
+    width: 30%;
+    height: auto;
+}
+
+.navbar.active .container .icon-back {
+    display: block;
+}
+.navbar .container .icon-back {
+    display: none;
+    position: absolute;
+    left: 0;
+    height: auto;
+    min-width: 30px;
+    max-width: 45px;
+    width: 100%;
+}
