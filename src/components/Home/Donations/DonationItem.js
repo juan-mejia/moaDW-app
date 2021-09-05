@@ -19,6 +19,7 @@ const DonationItem = (props)=> {
                         </h3>
                     </div>
                 </div>
+                <span className="line" />
                 <div className="item-body">
                     <div className="total-donations">
                         <p><b>TOTAL DONATIONS</b></p>

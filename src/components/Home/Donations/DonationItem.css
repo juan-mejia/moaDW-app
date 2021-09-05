@@ -28,7 +28,7 @@
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    /* width: 50%; */
+    width: 50%;
     margin: 0;
     padding: 0 20px;
 }
@@ -60,7 +60,7 @@
 }
 .donation-item .item-header .item-name {
     text-align: left;
-    font-size: clamp(1.6rem, 5vw ,2.5rem);
+    font-size: clamp(1.6rem, 5vw ,2.2rem);
     margin: 0 15px;
 }
 .donation-item .item-body {
@@ -69,15 +69,12 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    /* width: 50%; */
+    width: 35%;
     padding: 0 20px 0 20px;
-    border-left: 1px solid rgba(255,255,255,0.5);
 }
 @media (max-width: 710px){
     .donation-item .item-body {
         width: 90%;
-        border-left: none;
-        border-top: 1px solid rgba(255,255,255,0.5);
         padding: 20px 0;
         margin: 0 20px;
     }
@@ -101,4 +98,16 @@
 .donation-item .item-body .item-button img {
     width: 100%;
     height: auto;
+}
+.donation-item .line {
+    height: 80px;
+    width: 2px;
+    background-color: rgba(255,255,255,0.5);
+}
+@media (max-width: 710px){
+    .donation-item .line {
+        height: 2px;
+        width: 90%;
+        background-color: rgba(255,255,255,0.5);
+    }
 }

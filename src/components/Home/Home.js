@@ -11,16 +11,6 @@ const Home = (props)=> {
     const [itemList, setItemList] = useState([]);
     const [pageList, setPageList] = useState([]);
 
-    const fetchList = useCallback(async () => {
-            const response = await fetch('https://moadw-challenge.herokuapp.com/api/find-many?skip=0&limit=1000&sort=name');
-            const data = await response.json();
-            setItemList(data);
-        }, [])
-
-    useEffect(()=>{
-        fetchList();
-    },[fetchList]);
-
     const nextPageHandler = ()=> {
         let tempIndex = indexList;
         let tempList = [];
@@ -34,12 +24,11 @@ const Home = (props)=> {
         setIndexList(tempIndex);
     }
     const prevPageHandler = ()=> {
-        if(indexList <= 0 ){return}
+        if(indexList <= 3){return}
         let tempIndex = indexList - 6;
         let tempList = [];
         let pageSize = 3;
         do {
-            console.log(tempIndex);
             tempList.push(itemList[tempIndex]);
             tempIndex++;
             pageSize--;
@@ -48,10 +37,36 @@ const Home = (props)=> {
         setIndexList(tempIndex);
     }
 
+    const fetchList = useCallback(async () => {
+            const response = await fetch('https://moadw-challenge.herokuapp.com/api/find-many?skip=0&limit=1000&sort=name');
+            const data = await response.json();
+            setItemList(data);
+        }, [])
+
+    useEffect(()=>{
+        fetchList();
+    },[fetchList]);
+
+    useEffect(() => {
+        if(itemList.length > 0){
+            let tempIndex = 0;
+            let tempList = [];
+            let pageSize = 3;
+            do {
+                tempList.push(itemList[tempIndex]);
+                tempIndex++;
+                pageSize--;
+            } while(tempIndex < itemList.length && pageSize > 0);
+            setPageList(tempList);
+            setIndexList(tempIndex);
+        }
+    }, [itemList])
+
     return (
         <div className="home">
             <DonationsHeader />
-            <DonationsList list={pageList} />
+            {/* <DonationsList list={pageList} /> */}
+            {pageList.length > 0 ? <DonationsList list={pageList} /> : ''}
             <div className="home-actions">
                 <Button text="prev" onClick={prevPageHandler}/>
                 <Button text="next" onClick={nextPageHandler} />
