@@ -10,6 +10,7 @@ const Home = (props)=> {
     const [indexList, setIndexList] = useState(0);
     const [itemList, setItemList] = useState([]);
     const [pageList, setPageList] = useState([]);
+    const [sortBy, setSortBy] = useState('donations')
 
     const nextPageHandler = ()=> {
         let tempIndex = indexList;
@@ -37,11 +38,16 @@ const Home = (props)=> {
         setIndexList(tempIndex);
     }
 
+    const sortByHandler = (sort) => {
+        setSortBy(sort);
+    }
+
     const fetchList = useCallback(async () => {
-            const response = await fetch('https://moadw-challenge.herokuapp.com/api/find-many?skip=0&limit=1000&sort=name');
+            const response = await fetch(`https://moadw-challenge.herokuapp.com/api/find-many?skip=0&limit=1000&sort=${sortBy}`);
+            // const response = await fetch('https://moadw-challenge.herokuapp.com/api/find-many?skip=0&limit=1000&sort=donations');
             const data = await response.json();
             setItemList(data);
-        }, [])
+        }, [sortBy])
 
     useEffect(()=>{
         fetchList();
@@ -64,7 +70,7 @@ const Home = (props)=> {
 
     return (
         <div className="home">
-            <DonationsHeader />
+            <DonationsHeader onSortBy={sortByHandler} />
             {/* <DonationsList list={pageList} /> */}
             {pageList.length > 0 ? <DonationsList list={pageList} /> : ''}
             <div className="home-actions">
