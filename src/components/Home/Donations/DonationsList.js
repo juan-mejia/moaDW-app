@@ -2,10 +2,17 @@ import DonationItem from './DonationItem';
 
 import './DonationsList.css'
 
-const DonationsList = ()=> {
+const DonationsList = (props)=> {
+    const {list} = props;
+    console.log(list);
     return (
         <div className="donations-list">
-            <DonationItem />
+            { 
+            list.map((item) => (
+                <DonationItem item={item} />
+            ))
+            }
+            
         </div>
     );
 }

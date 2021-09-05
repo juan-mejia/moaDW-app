@@ -1,16 +1,16 @@
 import './DetailHeader.css'
-const DetailHeader = () => {
+const DetailHeader = (props) => {
     return (
         <div className="detail-header">
                 <h2 className="title title-color">
-                    Lorrie <br/>
-                    Cardenosa
+                    {props.firstName} <br/>
+                    {props.lastName}
                 </h2>
                 <div className="image">
-                    <img src="https://robohash.org/excepturiconsequatureius.png?size=50x50&set=set1" alt=" "></img>
+                    <img src={props.image} alt=" "></img>
                 </div>
                 <p className="description">
-                    Oth air transport accidents, not elsewhere classified, subs
+                    {props.description}
                 </p>
             </div>
     )

@@ -4,5 +4,18 @@
     max-width: 800px;
 }
 .home .home-actions {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.home .home-actions .button {
+    height: 3rem;
+    border-radius: 30px;
+    margin: 0 15px;
+}
+.home .home-actions .button button {
+    border-radius: 30px;
 }
