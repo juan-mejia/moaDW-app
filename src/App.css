@@ -12,7 +12,7 @@
 }
 .App::after {
   position: absolute;
-  content: 'Hola';
+  content: '';
   top: -15vw;
   left: -15vw;
   height: 30vw;
@@ -23,4 +23,11 @@
 
 .background-gradient {
   background: linear-gradient(to right, #EE8F00, #50D98B 53.13%, #00C0F5 100%);
+}
+.title-color {
+  background: -webkit-linear-gradient(45deg, #74EDE6, #9FC3F9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }

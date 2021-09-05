@@ -1,0 +1,46 @@
+.donations-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0;
+    width: 100%;
+}
+@media (max-width: 710px){
+    .donations-header {
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 0 20px 0;
+    }
+}
+.donations-header .title {
+    font-size: clamp(2rem, 10vw, 3.5rem); 
+}
+.donations-header .donations-filter {
+    height: 2.5rem;
+    width: 30%;
+    border-radius: 15px;
+    border: 2px solid white;
+}
+@media (max-width: 710px){
+    .donations-header .donations-filter {
+        width: 100%;
+    }
+}
+
+.donations-header .donations-filter select {
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    height: 100%;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+.donations-header .donations-filter select option {
+    font-weight: bolder;
+    font-size: 1.3rem;
+    opacity: 0;
+}

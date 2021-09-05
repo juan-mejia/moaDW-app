@@ -1,7 +1,7 @@
 // import { useParams } from 'react-router-dom'
 
 import Logo from '../UI/Logo'
-import IconBack from '../UI/IconBack'
+import ArrowIcon from '../UI/ArrowIcon'
 
 import "./Navbar.css"
 
@@ -10,7 +10,7 @@ const Navbar = () => {
     return (
         <nav className={`navbar background-gradient ${active ? 'active':''}`}>
             <div className="container">
-                <IconBack />
+                <ArrowIcon />
                 <Logo />
             </div>
         </nav>

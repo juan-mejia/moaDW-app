@@ -1,0 +1,30 @@
+.detail .detail-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.detail .detail-header .title {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    max-width: 450px; 
+}
+.detail .detail-header .image {
+    max-height: 250px;
+    height: 50vw;
+    max-width: 250px;
+    width: 50vw;
+    border-radius: 100%;
+    background: rgba(114, 112, 255, 1);
+    overflow: hidden;
+}
+.detail .detail-header .image img {
+    height: auto;
+    width: 100%;
+}
+.detail .detail-header .description {
+    font-size: clamp(1.3rem, 5vw, 1.9rem);
+    width: 80%;
+    max-width: 450px;
+    color: rgba(178, 178, 178, 1);
+}
