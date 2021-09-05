@@ -1,4 +1,5 @@
-// import { useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 
 import Logo from '../UI/Logo'
 import ArrowIcon from '../UI/ArrowIcon'
@@ -6,11 +7,24 @@ import ArrowIcon from '../UI/ArrowIcon'
 import "./Navbar.css"
 
 const Navbar = () => {
-    let active = false;
+    const [active, setActive] = useState(false);
+    let location = useLocation();
+
+
+    useEffect(() => {
+        if(location.pathname.includes('detail')){
+            setActive(true);
+        } else {
+            setActive(false);
+        }
+     },[location]) 
+
     return (
         <nav className={`navbar background-gradient ${active ? 'active':''}`}>
             <div className="container">
-                <ArrowIcon />
+                <Link to="/">
+                    <ArrowIcon  />
+                </Link>
                 <Logo />
             </div>
         </nav>

@@ -9,7 +9,7 @@
     align-items: center;
     width: 70%;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 50px auto 70px auto;
 }
 .home .home-actions .button {
     height: 3rem;

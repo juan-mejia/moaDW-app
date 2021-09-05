@@ -23,14 +23,17 @@
     width: 30%;
     height: auto;
 }
-
-.navbar.active .container .icon-back {
+.navbar .container a {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.navbar.active .container a {
     display: block;
 }
 .navbar .container .icon-back {
-    display: none;
-    position: absolute;
-    left: 0;
     height: auto;
     min-width: 30px;
     max-width: 45px;
