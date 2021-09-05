@@ -5,9 +5,6 @@ Este aplicación esta desarrollada en React. Utiliza un Rest API para mostrar to
 # Tecnologías 
 - React JS
 
-## Scripts Disponibles
-
-
 # Iniciar en modo desarrollador
 `npm start`
 
