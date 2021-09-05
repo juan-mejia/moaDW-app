@@ -1,3 +1,4 @@
+import './DetailHeader.css'
 const DetailHeader = () => {
     return (
         <div className="detail-header">

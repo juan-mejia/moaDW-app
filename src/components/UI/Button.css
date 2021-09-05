@@ -1,0 +1,39 @@
+.button {
+    cursor: pointer;
+    background: linear-gradient(to right, #74EDE6, #9FC3F9 100%);
+    height: 3.8rem;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 15px;
+    margin: 40px auto;
+    padding: 2px;
+}
+.button button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    background: black;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+}
+.button:hover button{
+    background: none;
+}
+
+.button button b {
+    font-size: clamp(1.3rem, 5vw, 1.9rem);
+    background: -webkit-linear-gradient(45deg, #74EDE6, #9FC3F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
+.button:hover button b {
+    background: black;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+}
