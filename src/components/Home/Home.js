@@ -1,5 +1,4 @@
 import {React, useEffect, useState, useCallback} from 'react'
-
 import DonationsHeader from './Donations/DonationsHeader'
 import DonationsList from './Donations/DonationsList'
 import Button from '../UI/Button'
@@ -44,7 +43,6 @@ const Home = (props)=> {
 
     const fetchList = useCallback(async () => {
             const response = await fetch(`https://moadw-challenge.herokuapp.com/api/find-many?skip=0&limit=1000&sort=${sortBy}`);
-            // const response = await fetch('https://moadw-challenge.herokuapp.com/api/find-many?skip=0&limit=1000&sort=donations');
             const data = await response.json();
             setItemList(data);
         }, [sortBy])
